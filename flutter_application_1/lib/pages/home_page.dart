@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../utils/my_tab.dart';
 
+import '../Tab/burger_tab.dart';
+import '../Tab/pancake_tab.dart';
+import '../Tab/pizza_tab.dart';
+import '../Tab/donut_tab.dart';
+import '../Tab/smoothie_tab.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -77,6 +83,15 @@ class _HomePageState extends State<HomePage> {
             //Tab bar
             TabBar(tabs: myTabs),
             //Tab bar view
+            const Expanded(
+                child: TabBarView(children: [
+              DonutTab(),
+              BurgerTab(),
+              SmoothieTab(),
+              PancakeTab(),
+              PizzaTab()
+            ]))
+
             //
             //Total del carrito
           ],
