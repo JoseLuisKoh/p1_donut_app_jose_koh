@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/car/cart_model.dart'; // Asegúrate de importar el modelo del carrito
 import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartModel()),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {

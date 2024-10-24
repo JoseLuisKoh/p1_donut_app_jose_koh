@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
-  final String donutFlavor;
-  final String donutPrice;
-  final dynamic donutColor;
+class PizzaTile extends StatelessWidget {
+  final String pizzaFlavor;
+  final String pizzaPrice;
+  final dynamic pizzaColor;
   final String imageName;
   final VoidCallback onAddToCart; // Callback para agregar al carrito
   final VoidCallback
       onFavoriteToggle; // Callback para cambiar el estado del favorito
 
   // Constructor para recibir los valores
-  const DonutTile({
+  const PizzaTile({
     super.key,
-    required this.donutFlavor,
-    required this.donutPrice,
-    required this.donutColor,
+    required this.pizzaFlavor,
+    required this.pizzaPrice,
+    required this.pizzaColor,
     required this.imageName,
     required this.onAddToCart,
     required this.onFavoriteToggle, // Para manejar el icono de favorito
@@ -26,7 +26,7 @@ class DonutTile extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: Container(
         decoration: BoxDecoration(
-            color: donutColor[100], borderRadius: BorderRadius.circular(24)),
+            color: pizzaColor[100], borderRadius: BorderRadius.circular(24)),
         child: Column(
           children: [
             Row(
@@ -34,18 +34,18 @@ class DonutTile extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: donutColor[200],
+                      color: pizzaColor[200],
                       borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(24),
                           bottomLeft: Radius.circular(24))),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
                   child: Text(
-                    "\$$donutPrice",
+                    "\$$pizzaPrice",
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: donutColor[800]),
+                        color: pizzaColor[800]),
                   ),
                 )
               ],
@@ -57,7 +57,7 @@ class DonutTile extends StatelessWidget {
             ),
             //Donut flavor Tex
             Text(
-              donutFlavor,
+              pizzaFlavor,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             Text("Dukin's", style: TextStyle(color: Colors.grey[600])),
